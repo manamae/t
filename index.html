@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="myLoop();">button</button>
+    <div id="demo">asdas</div>
+
+    <script>
+        var i = 0;
+        function myLoop() { //  create a loop function
+            document.getElementById("demo").innerHTML = "completed"
+            setTimeout(function () { //  call a 3s setTimeout when the loop is called
+                var myWindow = window.open("https://manamae.github.io/", "", "width=1000,height=1000");
+                setTimeout(function () {
+                    myWindow.close();
+                }, 8000);
+                i++; //  increment the counter
+                if (i < 100) { //  if the counter < 10, call the loop function
+                    console.log(i)
+                    myLoop(); //  ..  again which will trigger another 
+                }else{
+                    document.getElementById("demo").innerHTML = "completed"
+                }
+            }, 10000)
+        }
+
+
+
+
+
+     //   function func() {
+       //     for (let i = 0; i < 50; i++) {
+       //         var myWindow = window.open("https://manamae.github.io/", "", "width=1000,height=1000");
+       //         setTimeout(function () {
+       //             myWindow.close();
+       //         }, 10000);
+       //     }
+       // }
+    </script>
+</body>
+
+</html>
